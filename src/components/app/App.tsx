@@ -1,11 +1,8 @@
-import React from "react";
-
-
-
 export default function App() {
-    return (
-        <div>
-            <h1>Привет</h1>
-        </div>
-    )
+  return (
+	  <form>
+      <input type="text" name="username" />
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
