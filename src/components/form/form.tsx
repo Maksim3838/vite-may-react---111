@@ -28,7 +28,13 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
         <label className={css.label}>
           Password
           <input type="password" name="password" />
+          </label>
+          <label>
+          <input type="radio" name="radio" value="option1"/>option1
+          <input type="radio" name="radio" value="option2" defaultChecked />option2
+          <input type="radio" name="radio" value="option3" />option3
         </label>
+          
 
         <button type="submit">Place order</button>
       </form>
