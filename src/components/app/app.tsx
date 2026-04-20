@@ -3,20 +3,18 @@
 
 
 export default function App() {
-    const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
-        event.preventDefault();
-    const form = event.currentTarget;
-        const formData = new FormData(form);
-        form.reset();
-    console.log(formData.get("uzername"));}
-    
     return (
-        <>
-            <h1>Forma</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="uzername" />
-                <button type="submit">Submit</button>
-            </form>
-        </>
-    )
+       {
+  params: {
+    // твої параметри
+  },
+  headers: {
+    Authorization: `Bearer твійТокен`,
+  }
 }
+
+   )
+}
+
+
+VITE_TMDB_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNGE5OWM0NWYxYjJmMzllZDdiNTU2NTk0MTYxYmNkZCIsIm5iZiI6MTc2MjU0MTE4OC4wNDgsInN1YiI6IjY5MGUzZTg0ZjEyNWI4OGI1NjMxYTU0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kt7Rde5wrBqmbVtQv8dGqHh1s3_FT7kynaHwf0JSrT4
