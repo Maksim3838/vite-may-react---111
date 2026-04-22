@@ -5,8 +5,12 @@ export default function App() {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const username = formData.get("username")
-    console.log(username)
+    const username = formData.get("username") as string;
+    if (!username.trim()) {
+      console.log(alert("Заповни поле"));
+      return;
+    }
+    console.log(username);
    }
 
   return (
