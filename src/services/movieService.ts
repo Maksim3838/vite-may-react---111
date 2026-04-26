@@ -1,25 +1,10 @@
-<header className={styles.header}>
-  <div className={styles.container}>
-    <a
-      className={styles.link}
-      href="https://www.themoviedb.org/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Powered by TMDB
-    </a>
-    <form className={styles.form}>
-      <input
-        className={styles.input}
-        type="text"
-        name="query"
-        autoComplete="off"
-        placeholder="Search movies..."
-        autoFocus
-      />
-      <button className={styles.button} type="submit">
-        Search
-      </button>
-    </form>
-  </div>
-</header>
+import type { Movie } from "../types/movie";
+import { axiosInstance } from "./api";
+
+export async function fetchMovies(query: string): Promise<Movie[]> {
+  const response = await axiosInstance.get<{ results: Movie[] }>("/search/movie", {
+    params: { query, include_adult: false },
+  });
+
+  return response.data.results;
+}
