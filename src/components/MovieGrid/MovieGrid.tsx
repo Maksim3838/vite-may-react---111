@@ -3,7 +3,7 @@ import css from "./MovieModal.module.css";
 
 interface MovieGridProps {
   movies: Movie[];
-  onSelect: (movie: Movie) => void; // додано!
+  onSelect: (movie: Movie) => void; 
 }
 
 export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
